@@ -1,0 +1,21 @@
+<h1>Lista de usuarios</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+{% for user in users %}
+    <tr>
+        <td>{{user['nombre']}}</td>
+        <td>{{user['apellidos']}}</td>
+        <td>{{user['clave']}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% if mostrar_enlace %}
+    <a href="{{ url_for('formulario') }}">Añadir nuevo usuario</a>
+{% endif %}
